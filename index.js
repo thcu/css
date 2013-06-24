@@ -24,8 +24,8 @@ var testEl = document.createElement('p')
  * @api private
  */
 
-function dasherize (str) {
-  return str.replace(re, function() { return '-'+arguments[1].toLowerCase() })
+function dasherize(str) {
+  return str.replace(re, function() { return '-'+arguments[1].toLowerCase() });
 }
 
 /**
@@ -36,11 +36,11 @@ function dasherize (str) {
  * @api private
  */
 
-function prefix (property) {
+function prefix(property) {
   for (var i = cssPrefixes.length - 1; i >= 0; i--) {
     property = cssPrefixes[i] + dasherize(property);
-    if (testEl.style[property] != undefined) return property
-  };
+    if (testEl.style[property] != undefined) return property;
+  }
 }
 
 
@@ -53,10 +53,10 @@ function prefix (property) {
  * @api public
  */
 
-function css(element, properties){
+function css(element, properties) {
   for (var property in properties) {
     if (element.style[property] != undefined) element.style[key] = properties[property];
     element.style[prefix(property)] = properties[property];
   }
   return element;
-};
+}
