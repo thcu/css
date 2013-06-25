@@ -55,7 +55,7 @@ function prefix(property) {
 
 function css(element, properties) {
   for (var property in properties) {
-    if (element.style[property] != undefined) element.style[key] = properties[property];
+    if (element.style[property] != undefined) element.style[property] = properties[property];
     element.style[prefix(property)] = properties[property];
   }
   return element;
